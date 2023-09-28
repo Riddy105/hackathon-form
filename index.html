@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="media.css" />
+    <script src="script.js" defer></script>
+    <title>Hackathon Form</title>
+  </head>
+  <body>
+    <header>
+      <a class="back">Go back</a>
+    </header>
+    <h1>HACKATHON REGISTRATION</h1>
+    <h2 class="extra-info">
+      Fields marked with an <span class="asterik">*</span> are required.
+    </h2>
+    <h2 class="extra-info">
+      If you would like to take part in our event, please fill in your details
+      in this Event Registration Form below and you will be automatically
+      registered.
+    </h2>
+    <div class="container">
+      <section class="personal-info">
+        <h2 class="section-heading">Personal Information</h2>
+        <div class="input-section">
+          <div class="individual-input title">
+            <label for="title">Title <span class="asterik">*</span> </label>
+            <select name="title" id="title" required>
+              <option value="mr">Mr</option>
+              <option value="miss">Miss</option>
+              <option value="mrs">Mrs</option>
+              <option value="dr">Dr</option>
+            </select>
+          </div>
+          <div class="individual-input first-name">
+            <label for="first-name"
+              >First Name <span class="asterik">*</span>
+            </label>
+            <input type="text" required id="first-name" />
+          </div>
+          <div class="individual-input last-name">
+            <label for="last-name"
+              >Last Name <span class="asterik">*</span>
+            </label>
+            <input type="text" required id="last-name" />
+          </div>
+          <div class="individual-input email">
+            <label for="email">Email <span class="asterik">*</span> </label>
+            <input type="email" required id="email" />
+          </div>
+          <div class="individual-input phone">
+            <label for="contact">Contact <span class="asterik">*</span> </label>
+            <input type="number" required id="contact" />
+          </div>
+          <div class="individual-input occupation">
+            <label for="occupation"
+              >Current Occupation <span class="asterik">*</span>
+            </label>
+            <select name="title" id="occupation" required>
+              <option value="student">Student</option>
+              <option value="employed">Employed</option>
+              <option value="self-employed">Self-employed</option>
+              <option value="unemployed">Unemployed</option>
+              <option value="retired">Retired</option>
+            </select>
+          </div>
+          <div class="individual-input experience">
+            <label for="experience"
+              >Hackathon Experience <span class="asterik">*</span>
+            </label>
+            <select name="title" id="experience" required>
+              <option value="I have hackathon experience">
+                Yes, I have participated in a hackathon before.
+              </option>
+              <option value="I don't have hackathon experience">
+                No, this would be my first hackathon.
+              </option>
+            </select>
+          </div>
+        </div>
+      </section>
+      <section class="add-participant">
+        <h2 class="section-heading">
+          Add Partcipants(You can add up to 5 participants)
+        </h2>
+
+        <div class="participants-container"></div>
+        <button class="add-member">Add participants</button>
+      </section>
+      <section class="problem-section">
+        <h2 class="section-heading">CHALLENGE INFORMATION</h2>
+        <div class="input-section">
+          <div class="individual-input problem">
+            <label for="challenge"
+              >Problem Categories <span class="asterik">*</span>
+            </label>
+            <select name="problem" id="problem" required>
+              <option value="Digital Literacy & Inclusion">
+                Digital Literacy & Inclusion
+              </option>
+              <option value="Creative Media Technology">
+                Creative Media Technology
+              </option>
+              <option value="Government Services">Government Services</option>
+              <option value="Subsidy Removal / Mobility">
+                Subsidy Removal / Mobility
+              </option>
+              <option value="Financial Inclusion Technology">
+                Financial Inclusion Technology
+              </option>
+            </select>
+          </div>
+          <div class="individual-input statement">
+            <label for="statement"
+              >Problem Statement(A link to Google docs)<span class="asterik"
+                >*</span
+              >
+            </label>
+            <input type="url" required id="statemnt" />
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

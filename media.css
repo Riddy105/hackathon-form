@@ -1,0 +1,20 @@
+@media (max-width: 600px) {
+  .container {
+    width: 90%;
+  }
+  .extra-info {
+    width: 90%;
+  }
+  .input-section {
+    grid-template-columns: 1fr;
+  }
+  .title {
+    grid-column: auto;
+  }
+  .section-heading {
+    font-size: 1.8rem;
+  }
+  .individual-input label {
+    font-size: 1.4rem;
+  }
+}

@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap");
+html {
+  font-size: 10px;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --danger-red: #e80000;
+  --input-grey: #787878;
+  --default-green: #004e2a;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+header {
+  background-color: #004e2a;
+  padding: 20px 30px;
+  margin-bottom: 30px;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+}
+.container {
+  width: 70%;
+  max-width: 1200px;
+  margin: 50px auto 0;
+}
+.container section {
+  margin-bottom: 4rem;
+}
+.back {
+  box-shadow: 0px 3px 8px 0 rgba(0, 0, 0, 0.24);
+  background-color: white;
+  border-radius: 0.4rem;
+  padding: 10px;
+  text-transform: capitalize;
+  font-size: 1.4rem;
+}
+h1 {
+  font-size: 4rem;
+  text-align: center;
+}
+.extra-info {
+  font-size: 1.6rem;
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+}
+.asterik {
+  color: var(--danger-red);
+}
+.section-heading {
+  font-size: 2.4rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+.input-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 20px;
+  position: relative;
+}
+.input-section select,
+.input-section input {
+  color: var(--input-grey);
+  padding: 1.2rem;
+  font-size: 1.6rem;
+  border-color: var(--input-grey);
+  height: 5rem;
+}
+.input-section input {
+  border: 1px solid var(--input-grey);
+}
+.individual-input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.individual-input label {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.title {
+  grid-column: span 2;
+}
+
+/* ADD MEMBER SECTION  */
+.participants-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.add-member {
+  background: var(--default-green);
+  padding: 1rem;
+  border-radius: 0.2rem;
+  font-size: 1.6rem;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.add-member:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+.remove-participant {
+  color: red;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  justify-self: start;
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin-top: -1rem;
+  margin-bottom: 2rem;
+}
