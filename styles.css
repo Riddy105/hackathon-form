@@ -11,36 +11,282 @@ html {
   --danger-red: #e80000;
   --input-grey: #787878;
   --default-green: #004e2a;
+  --white: #fff;
+  --bkg-grey: #f7f7f4;
+  --lemon: #a6ff00;
 }
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
 }
-header {
-  background-color: #004e2a;
-  padding: 20px 30px;
-  margin-bottom: 30px;
-}
 body {
   font-family: "Open Sans", sans-serif;
 }
-.container {
-  width: 70%;
-  max-width: 1200px;
-  margin: 50px auto 0;
+
+/* ANIMATIONS */
+
+@keyframes title {
+  0% {
+    scale: 2;
+    opacity: 0.2;
+  }
+  70% {
+    scale: 0.8;
+    opacity: 0.5;
+  }
+  100% {
+    scale: 1;
+    opacity: 1;
+  }
 }
-.container section {
+@keyframes theme {
+  0% {
+    transform: translateX(100%);
+    opacity: 0.2;
+  }
+  70% {
+    transform: translateX(-30%);
+
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+/* UTILITY */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 5;
+}
+.container {
+  width: 80%;
+  /* max-width: 1200px; */
+  margin: 0 auto;
+}
+.form-container {
+  background-color: var(--white);
+  padding: 2rem;
+  overflow-y: scroll;
+  /* margin: 50px auto; */
+  display: none;
+  position: fixed;
+  height: 80vh;
+  left: 50%;
+  top: 10%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+.form-container section {
   margin-bottom: 4rem;
 }
-.back {
+header {
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("./images/hackathon.png");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  padding: 20rem 0;
+  margin-bottom: 30px;
+  color: rgb(0, 0, 0);
+}
+
+header .hack-tag {
+  font-size: 6rem;
+  text-align: center;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 2rem;
+  animation: title 1s forwards;
+}
+header .hack-theme {
+  font-size: 3.6rem;
+  text-align: center;
+  color: var(--white);
+  width: 70%;
+  margin: 0 auto;
+  animation: theme 1.5s forwards;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.6rem;
+  width: 95%;
+  margin: 0 auto 2rem;
+}
+.card-container .black-card {
+  background-color: var(--default-green);
+  /* padding: 0 2rem; */
+  height: 36rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 4.8rem;
+  text-align: center;
+}
+
+.black-card p {
+  color: var(--white);
+}
+.black-card span {
+  color: #a6ff00;
+}
+
+.about-hack {
+  background-color: var(--bkg-grey);
+  padding: 3rem 0;
+}
+.about-hack h2 {
+  font-weight: 600;
+  font-size: 4.8rem;
+  text-align: center;
+}
+.about-hack h3 {
+  font-weight: 500;
+  font-size: 3.6rem;
+  text-align: center;
+}
+.about-hack .info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 3rem;
+}
+.about-hack p {
+  font-size: 3rem;
+}
+/* SCHEDULE SECTION */
+.hack-schedule {
+  padding: 3rem 0;
+}
+.hack-schedule h2 {
+  font-size: 4.8rem;
+  font-weight: 600;
+}
+.schedule-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin-top: 3rem;
+}
+.schedule-container .date h3 {
+  font-weight: 600;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+.schedule-container .date p {
+  font-size: 2rem;
+  background-color: var(--default-green);
+  color: var(--white);
+  width: fit-content;
+}
+.schedule-container .date ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style: none;
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+
+/* CHALLENGES */
+.hack-challenges {
+  background-color: var(--bkg-grey);
+  padding: 3rem 0;
+}
+.hack-challenges .title {
+  font-weight: 600;
+  font-size: 4.8rem;
+  text-align: center;
+}
+.hack-challenges h3 {
+  font-weight: 500;
+  font-size: 3.6rem;
+  text-align: center;
+}
+.hack-challenges span {
+  background-color: var(--lemon);
+}
+
+.challenges-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin-top: 2rem;
+}
+.challenges-container .challenge {
+  padding: 2rem 2rem 8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: var(--white);
+}
+.challenges-container .challenge img {
+  height: 4rem;
+  width: 4rem;
+}
+.challenges-container .challenge h2 {
+  font-weight: 600;
+  font-size: 2.4rem;
+}
+.challenges-container .challenge p {
+  font-size: 2rem;
+}
+
+/* REGISTERATION */
+.register {
+  background-color: var(--default-green);
+  padding: 10rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  color: var(--white);
+  text-align: center;
+}
+.register h2 {
+  font-size: 4rem;
+  font-weight: 600;
+}
+.register p {
+  font-size: 2rem;
+  font-weight: 500;
+}
+.register button {
+  border: 2px solid var(--white);
+  font-size: 2rem;
+  background: none;
+  padding: 1.5rem 5rem;
+  text-transform: uppercase;
+  color: var(--white);
+  cursor: pointer;
+}
+.register button:hover {
+  background-color: var(--lemon);
+}
+/* .back {
   box-shadow: 0px 3px 8px 0 rgba(0, 0, 0, 0.24);
   background-color: white;
   border-radius: 0.4rem;
   padding: 10px;
   text-transform: capitalize;
   font-size: 1.4rem;
-}
-h1 {
+} */
+
+.form-heading {
   font-size: 4rem;
   text-align: center;
 }
@@ -94,7 +340,8 @@ h1 {
   flex-direction: column;
   gap: 2rem;
 }
-.add-member {
+.add-member,
+.submit {
   background: var(--default-green);
   padding: 1rem;
   border-radius: 0.2rem;

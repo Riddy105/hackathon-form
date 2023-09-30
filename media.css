@@ -1,7 +1,56 @@
 @media (max-width: 600px) {
+  /* UTILITY */
   .container {
     width: 90%;
   }
+  /* HEADER */
+  header .hack-tag {
+    font-size: 4rem;
+  }
+  header .hack-theme {
+    font-size: 2rem;
+    width: 90%;
+  }
+
+  /* CARD SECTION */
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+  .card-container .black-card {
+    height: 30rem;
+  }
+
+  /* ABOUT HACKATHON */
+
+  .about-hack .info {
+    grid-template-columns: 1fr;
+  }
+  .about-hack h2,
+  .hack-challenges .title {
+    font-size: 2.4rem;
+  }
+  .about-hack h3,
+  .hack-challenges h3 {
+    font-size: 2rem;
+  }
+  .about-hack p {
+    font-size: 1.6rem;
+  }
+
+  /* SCHEDULE SECTION */
+
+  .schedule-container {
+    grid-template-columns: 1fr;
+  }
+  .schedule-container .date ul {
+    font-size: 1.6rem;
+  }
+
+  /* CHALLENGES CONTAINER */
+  .challenges-container {
+    grid-template-columns: 1fr;
+  }
+  /* FORM */
   .extra-info {
     width: 90%;
   }

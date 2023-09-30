@@ -2,9 +2,11 @@
 const addParticipantBtn = document.querySelector(".add-member");
 const removeParticipantBtn = document.querySelector(".remove-participant");
 const partcipantsContainer = document.querySelector(".participants-container");
-// const addedParticipantsEl = document.querySelectorAll(".added-participants");
+const registerBtn = document.querySelector(".register");
+const overlay = document.querySelector(".overlay");
+const formEl = document.querySelector("form");
 
-const partcipantsArray = [1];
+const firstNameInput = document.getElementById("first-name");
 let participantNumber = 0;
 const memberForm = `
 <div class='input-section added-participants'>
@@ -21,8 +23,9 @@ const memberForm = `
 <button class='remove-participant'>Remove Participant</button>
 </div>
 `;
-
 const addParticipantHandler = (e) => {
+  console.log(firstNameInput.validity);
+
   participantNumber = participantNumber + 1;
   addParticipantBtn.disabled = participantNumber === 5;
   partcipantsContainer.insertAdjacentHTML(
@@ -52,5 +55,16 @@ const removeParticipantHandler = (e) => {
     addParticipantBtn.disabled = participantNumber === 5;
   }
 };
+
+const showForm = (e) => {
+  formEl.style.display = "block";
+  overlay.style.display = "block";
+};
+const hideForm = (e) => {
+  formEl.style.display = "none";
+  overlay.style.display = "none";
+};
 addParticipantBtn.addEventListener("click", addParticipantHandler);
 partcipantsContainer.addEventListener("click", removeParticipantHandler);
+registerBtn.addEventListener("click", showForm);
+overlay.addEventListener("click", hideForm);
