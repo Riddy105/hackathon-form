@@ -2,7 +2,7 @@
 const addParticipantBtn = document.querySelector(".add-member");
 const removeParticipantBtn = document.querySelector(".remove-participant");
 const partcipantsContainer = document.querySelector(".participants-container");
-const registerBtn = document.querySelector(".register-btn");
+const registerBtns = document.querySelectorAll(".register-btn");
 const overlay = document.querySelector(".overlay");
 const formEl = document.querySelector("form");
 
@@ -66,5 +66,5 @@ const hideForm = (e) => {
 };
 addParticipantBtn.addEventListener("click", addParticipantHandler);
 partcipantsContainer.addEventListener("click", removeParticipantHandler);
-registerBtn.addEventListener("click", showForm);
+registerBtns.forEach((btn) => btn.addEventListener("click", showForm));
 overlay.addEventListener("click", hideForm);
