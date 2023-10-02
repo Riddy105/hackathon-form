@@ -54,6 +54,20 @@ body {
     opacity: 1;
   }
 }
+@keyframes register {
+  0% {
+    transform: translateY(100vh);
+    opacity: 0.2;
+  }
+  70% {
+    transform: translateY(-10vh);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 /* UTILITY */
 .overlay {
   display: none;
@@ -62,7 +76,7 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.7);
   z-index: 5;
 }
 .container {
@@ -82,6 +96,7 @@ body {
   top: 10%;
   transform: translateX(-50%);
   z-index: 10;
+  border-radius: 1rem;
 }
 .form-container section {
   margin-bottom: 4rem;
@@ -99,6 +114,10 @@ header {
   padding: 20rem 0;
   margin-bottom: 30px;
   color: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
 }
 
 header .hack-tag {
@@ -106,18 +125,23 @@ header .hack-tag {
   text-align: center;
   font-weight: 600;
   color: var(--white);
-  margin-bottom: 2rem;
   animation: title 1s forwards;
 }
 header .hack-theme {
   font-size: 3.6rem;
   text-align: center;
   color: var(--white);
+  /* background-color: var(--default-green); */
   width: 70%;
   margin: 0 auto;
   animation: theme 1.5s forwards;
+  /* border-radius: 1rem; */
 }
-
+header .register-btn {
+  background-color: var(--default-green);
+  border-radius: 0.5rem;
+  border: none;
+}
 .card-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -232,6 +256,7 @@ header .hack-theme {
   flex-direction: column;
   gap: 0.5rem;
   background-color: var(--white);
+  border-radius: 1rem;
 }
 .challenges-container .challenge img {
   height: 4rem;
@@ -264,7 +289,7 @@ header .hack-theme {
   font-size: 2rem;
   font-weight: 500;
 }
-.register button {
+.register-btn {
   border: 2px solid var(--white);
   font-size: 2rem;
   background: none;
@@ -272,10 +297,13 @@ header .hack-theme {
   text-transform: uppercase;
   color: var(--white);
   cursor: pointer;
+  animation: register 1.5s forwards;
 }
-.register button:hover {
+.register-btn:hover {
   background-color: var(--lemon);
 }
+/* SPONSORS */
+
 /* .back {
   box-shadow: 0px 3px 8px 0 rgba(0, 0, 0, 0.24);
   background-color: white;
@@ -285,6 +313,7 @@ header .hack-theme {
   font-size: 1.4rem;
 } */
 
+/* FORM */
 .form-heading {
   font-size: 4rem;
   text-align: center;

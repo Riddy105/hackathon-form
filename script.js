@@ -2,7 +2,7 @@
 const addParticipantBtn = document.querySelector(".add-member");
 const removeParticipantBtn = document.querySelector(".remove-participant");
 const partcipantsContainer = document.querySelector(".participants-container");
-const registerBtn = document.querySelector(".register");
+const registerBtn = document.querySelector(".register-btn");
 const overlay = document.querySelector(".overlay");
 const formEl = document.querySelector("form");
 
